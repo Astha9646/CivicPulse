@@ -25,34 +25,22 @@ Scheduled backend jobs for continuous data updates
 Modular, scalable full-stack architecture
 
 🏗️ System Architecture
-                ┌─────────────────────┐
-                │   External Sources  │
-                │ (Web / Civic Data)  │
-                └─────────┬───────────┘
-                          │
-                  Data Scraping Layer
-                          │
-                ┌─────────▼───────────┐
-                │     Backend API     │
-                │   (FastAPI, Python) │
-                ├─────────────────────┤
-                │ • Data Processing   │
-                │ • Geocoding         │
-                │ • AI Scoring Logic  │
-                │ • Scheduler Jobs    │
-                └─────────┬───────────┘
-                          │
-                ┌─────────▼───────────┐
-                │      Database       │
-                │ (SQLite/PostgreSQL) │
-                └─────────┬───────────┘
-                          │
-                ┌─────────▼───────────┐
-                │     Frontend UI     │
-                │     (React.js)      │
-                └─────────────────────┘
 
-            ───────── Docker & Docker Compose ─────────
+External Data Sources  
+↓  
+Data Scraping Layer  
+↓  
+Backend API (FastAPI, Python)  
+- Data Processing  
+- Geocoding  
+- AI Scoring  
+- Scheduler Jobs  
+↓  
+Database (SQLite / PostgreSQL)  
+↓  
+Frontend UI (React.js)  
+
+*All services are containerized using Docker & Docker Compose.*
 
 
 Architecture Highlights
